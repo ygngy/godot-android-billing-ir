@@ -1,0 +1,17 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file('godot-lib.3.5.1.stable.release.aar'))
+// todo: Download version "3.5.1.stable" from below link and put it in current folder.
+// https://downloads.tuxfamily.org/godotengine/3.5.1/godot-lib.3.5.1.stable.release.aar
+
+
+
+
+
+
+// Other versions could be found here
+// Download the Godot engine library (godot-lib.<version>.<status>.aar) from the Godot download page:
+// https://downloads.tuxfamily.org/godotengine/
+
+
+// Latest stable version here:
+// https://godotengine.org/download

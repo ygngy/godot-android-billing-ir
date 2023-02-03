@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.github.ygngy.godotbillingplugin'
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 19
+        targetSdk 33
+        versionCode 1
+        versionName "0.1-alpha01"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "store"
+    productFlavors {
+        myket {
+            dimension "store"
+            def marketApplicationId = "ir.mservices.market"
+            def marketBindAddress ="ir.mservices.market.InAppBillingService.BIND"
+            def godotPluginName = "GodotBilling_myket"
+            buildConfigField "String", "GODOT_PLUGIN_NAME", "\"GodotBilling_myket\""
+            manifestPlaceholders = [
+                                    marketApplicationId: "${marketApplicationId}",
+                                    marketBindAddress: "${marketBindAddress}",
+                                    marketPermission: "${marketApplicationId}.BILLING",
+                                    godotPluginName   : "${godotPluginName}"
+                                    ]
+        }
+        bazaar {
+            dimension "store"
+            def marketApplicationId = "com.farsitel.bazaar"
+            def marketBindAddress = "ir.cafebazaar.pardakht.InAppBillingService.BIND"
+            def godotPluginName = "GodotBilling_bazaar"
+            buildConfigField "String", "GODOT_PLUGIN_NAME", "\"GodotBilling_bazaar\""
+            manifestPlaceholders = [
+                                    marketApplicationId: "${marketApplicationId}",
+                                    marketBindAddress  : "${marketBindAddress}",
+                                    marketPermission   : "com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR",
+                                    godotPluginName   : "${godotPluginName}"
+                                    ]
+        }
+    }
+    libraryVariants.all { variant ->
+        variant.outputs.all { output ->
+            output.outputFileName = "GodotBilling_${variant.name}.aar"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.0'
+    compileOnly project(":godot")
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
