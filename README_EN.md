@@ -71,7 +71,7 @@ func _ready():
 func _reconnect_Button_Pressed():
 	# If we could not connect to the store after starting the game
 	# Specify a button for "reconnect" and when it is clicked you should execute this function
-    # Here you must disable the "Reconnect" button first
+	# Here you must disable the "Reconnect" button first
 	if billing == null:
 		print("InAppBilling plugin is not available for this device.")
 	else:
@@ -92,7 +92,7 @@ func _on_ConnectionFailed(msg: String):
 	# In this case, the connection to the store has failed
 	# It is better to inform the user here in a dialog
 	# This can be due to not being connected to the Internet or not installing Myket or Bazaar
-    # Here you need to enable the "reconnect" button and show it to the user
+	# Here you need to enable the "reconnect" button and show it to the user
 	
 func _on_QuerySucceed(results):
 	# Products information is in the parameter of this function
@@ -125,9 +125,9 @@ func _on_QueryFailed():
 
 func _setGamePremium():
 	print("Game is premium now.")
-    # The game is purchased, you must activate the premium mode for the user
-    # For a better experience, somehow inform the user that the game is in premium mode
-    # For example, inform the user in the dialogue or toast
+	# The game is purchased, you must activate the premium mode for the user
+	# For a better experience, somehow inform the user that the game is in premium mode
+	# For example, inform the user in the dialogue or toast
 	
 
 func _on_PurchaseSucceed(sku: String):
@@ -144,7 +144,7 @@ func _on_PurchaseFailed(errorCode: int, errorMessage: String):
 
 
 func _on_ConsumeSucceed(sku: String):
-    print("Consume Succeed sku: ", sku)
+	print("Consume Succeed sku: ", sku)
 	# This function is executed only when the purchase consumption is successful
 	# So here you must save the purchased item in the game
 	# because after consuming the purchase, the user no longer owns it in the market and can buy it again
