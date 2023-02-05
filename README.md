@@ -93,6 +93,7 @@ func exit():
 
 
 func _on_Connected(msg: String):
+	# به فروشگاه متصل شد
 	print("Successfully connected to billing service")
 	billing.querySkuDetails()
 		
@@ -124,7 +125,7 @@ func _on_QuerySucceed(results):
 			# حالت پرمیوم قبلاً خریده شده آن را فعال می کنیم
 			_setGamePremium()
 			return
-	# حالت پرمیوم قبلاً خریده نشده فرایند در صورت نیاز خرید آن را آغاز می‌کنیم
+	# حالت پرمیوم قبلاً خریده نشده ، در صورت نیاز خرید آن را آغاز می‌کنیم
 	billing.purchase(SKU_PREMIUM)
 	        
 
@@ -145,13 +146,19 @@ func _setGamePremium():
 
 func _on_PurchaseSucceed(sku: String):
 	print("Purchase Succeed SKU: ", sku)
+	# این تابع فقط وقتی اجرا می‌شود که خرید انجام شده باشد
 	# در اینجا می‌توانید از یک دیالوگ برای نمایش نتیجه خرید استفاده کنید
 	# اگر خرید مصرف شدنی نیست آن را برای کاربر فعال کنید
 	# مصرف کنید consume ولی اگر خرید مصرف شدنی است ابتدا خرید را بوسیله تابع 
 	var requested = billing.consume(sku) # استفاده کنید consume فقط اگر خرید مصرف شدنی بود از تابع 
+	# به معنی مصرف شدن خرید نیست consume بودن خروجی تابع true توجه کنید که
+	# بلکه به معنی ارسال درخواست مصرف به بازار و یا مایکت است
+	# نتیجه درخواست مصرف ، در رویدادهای زیر به برنامه ارسال می‌شود
+	# consume_succeed  ,  consume_failed    
     
 
 func _on_PurchaseFailed(errorCode: int, errorMessage: String):
+	# خرید ناموفق بود
 	print("Purchase Failed error code: " + str(errorCode) + " error message: " + errorMessage)
 
 
@@ -166,8 +173,10 @@ func _on_ConsumeFailed(sku: String):
 	print("Consume Failed sku: ", sku)
 	# مصرف خرید ناموفق بود، تلاش مجدد برای مصرف خرید
 	var requested = billing.consume(sku) # است true در صورت شروع فرایند مصرف، خروجی
-
-
+	# به معنی مصرف شدن خرید نیست consume بودن خروجی تابع true توجه کنید که
+	# بلکه به معنی ارسال درخواست مصرف به بازار و یا مایکت است
+	# نتیجه درخواست مصرف ، در رویدادهای زیر به برنامه ارسال می‌شود
+	# consume_succeed  ,  consume_failed
 
 
 ```
