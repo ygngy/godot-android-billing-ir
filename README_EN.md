@@ -136,6 +136,10 @@ func _on_PurchaseSucceed(sku: String):
 	# If the purchase is not consumable, activate it for the user
 	# But if the purchase is consumable, first consume the purchase using the "consume" function
 	var requested = billing.consume(sku) # Use the consume function only if the purchase is consumable
+	# Note that return value of "true" from "consume" function, does not mean that the purchase is consumed!
+	# but means sending a request for consumption to the Bazaar or Myket.
+	# once the consumption is done the result will be sent to the application in the following events:
+	# "consume_succeed"  ,  "consume_failed"
     
 
 func _on_PurchaseFailed(errorCode: int, errorMessage: String):
@@ -153,7 +157,10 @@ func _on_ConsumeFailed(sku: String):
 	print("Consume Failed sku: ", sku)
 	# Purchase consumption failed, retry to consume it
 	var requested = billing.consume(sku) # If the consumption process starts, the return value is true
-
+	# Note that return value of "true" from "consume" function, does not mean that the purchase is consumed!
+	# but means sending a request for consumption to the Bazaar or Myket.
+	# once the consumption is done the result will be sent to the application in the following events:
+	# "consume_succeed"  ,  "consume_failed"
 
 
 ```
