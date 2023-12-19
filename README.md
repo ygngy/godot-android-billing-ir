@@ -1,17 +1,21 @@
-# Godot game engine plugins for Myket and Cafe Bazaar in-app purchases
+# Godot 3 game engine plugins for Myket and Cafe Bazaar in-app purchases
 
 <br>
 
 ## [View this page in English](README_EN.md)
 
 
-## پلاگین موتور بازی‌سازی گودو برای پرداخت درون برنامه‌ای کافه‌بازار و مایکت 
+## پلاگین موتور بازی‌سازی گودو 3 برای پرداخت درون برنامه‌ای کافه‌بازار و مایکت 
 
 <br>
 
 <div dir="rtl">
   
 این پلاگین امکان استفاده از پرداخت درون برنامه‌ای  [مایکت](https://myket.ir) و [کافه بازار](https://cafebazaar.ir) را برای موتور بازی سازی [گودو](https://godotengine.org) فراهم میکند.
+
+
+**نکته: این پلاگین برای گودو نسخه 3.5.1 طراحی و تست شده است و ممکن است در سایر نسخه ها کارنکند.**
+
 
 <br>
 

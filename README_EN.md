@@ -1,4 +1,4 @@
-# Godot game engine plugins for Myket and CafeBazaar in-app purchases
+# Godot 3 game engine plugins for Myket and CafeBazaar in-app purchases
 <br>
 
 ## [مشاهده این صفحه به زبان فارسی](README.md)
@@ -6,6 +6,10 @@
 <br>
   
 This plugin provides the possibility to use the in-app purchase of [CafeBazaar](https://cafebazaar.ir) and [Myket](https://myket.ir) stores for the [Godot](https://godotengine.org) game engine.
+
+
+**Note: This plugin is designed and tested for Godot version 3.5.1 and may not work in other versions.**
+
 
 <br>
 
