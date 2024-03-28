@@ -1,5 +1,12 @@
 # Godot 3 game engine plugins for Myket and CafeBazaar in-app purchases
+
+### Telegram: [https://t.me/Amani_0_1](https://t.me/Amani_0_1)
+
+To get Godot 4 compatible version, please text me in [Telegram](https://t.me/Amani_0_1).
+
 <br>
+
+## برای دریافت نسخه سازگار با گودو 4 لطفاً در [تلگرام](https://t.me/Amani_0_1) پیام بدید.
 
 ## [مشاهده این صفحه به زبان فارسی](README.md)
 
@@ -169,6 +176,9 @@ func _on_ConsumeFailed(sku: String):
 
 ```
 
+**To get Godot 4 compatible version, please text me in [Telegram](https://t.me/Amani_0_1).**
+
+## برای دریافت نسخه سازگار با گودو 4 لطفاً در [تلگرام](https://t.me/Amani_0_1) پیام بدید.
 
 --------------------------------------------------------------------------
 
@@ -181,3 +191,4 @@ My Github Profile: [https://github.com/ygngy](https://github.com/ygngy)
 
 Email:  [help4usr@gmail.com](mailto:help4usr@gmail.com)
 
+Telegram: [https://t.me/Amani_0_1](https://t.me/Amani_0_1)
